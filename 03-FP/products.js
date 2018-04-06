@@ -7,3 +7,24 @@ var products = [
 ];
 
 //find the sum of product value (cost * units) of stationary products (use filter, map * reduce)
+
+var stationaryProducts = products.filter(function(product){
+	return product.category === 'stationary';
+})
+
+var productsWithDiscount = products.map(function(product){
+	return { 
+		id : product.id,
+		name : product.name,
+		cost : product.cost * .9,
+		units : product.units,
+		category : product.category
+    }
+})
+
+
+var numbers = [5,3,6,2]
+numbers.reduce(function(n1, n2){
+	console.log(arguments);
+	return n1 + n2;
+})
